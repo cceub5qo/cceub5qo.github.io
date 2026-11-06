@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秘密研究所-秘密研究所网页入口_神秘实验室探秘</title>
+<meta name="description" content="秘密研究所主题首页，汇集神秘实验室的传闻、档案条目、探秘线索与网页入口，带你了解秘密研究所的公开信息与常见疑问。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Ccircle cx='32' cy='27' r='13' fill='none' stroke='%2340e0c0' stroke-width='3'/%3E%3Ccircle cx='32' cy='27' r='5' fill='%2340e0c0'/%3E%3Cpath d='M18 55l10-14h8l10 14' fill='none' stroke='%2340e0c0' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0a0f18;
+  --bg-soft:#101826;
+  --card:#131d2d;
+  --line:#22334a;
+  --txt:#dbe6f2;
+  --muted:#8ba0b8;
+  --accent:#40e0c0;
+  --accent-dim:#1f8f7c;
+  --warm:#e0b040;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,15,24,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;height:66px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--txt);letter-spacing:.5px}
+.brand svg{flex:0 0 auto}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.navlinks{display:flex;gap:22px;font-size:14.5px}
+.navlinks a{color:var(--muted)}
+.navlinks a:hover{color:var(--accent);text-decoration:none}
+.navcta{
+  font-size:14px;padding:8px 16px;border:1px solid var(--accent-dim);
+  border-radius:6px;color:var(--accent);white-space:nowrap;
+}
+.navcta:hover{background:rgba(64,224,192,.08);text-decoration:none}
+@media(max-width:820px){
+  .navlinks{display:none}
+}
+
+/* hero */
+.hero{
+  position:relative;
+  padding:72px 0 64px;
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(600px 300px at 78% 18%, rgba(64,224,192,.10), transparent 70%),
+    radial-gradient(500px 260px at 12% 82%, rgba(224,176,64,.07), transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;display:grid;grid-template-columns:1.15fr .85fr;
+  gap:48px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:2px;color:var(--accent);
+  border:1px solid var(--accent-dim);border-radius:999px;
+  padding:4px 14px;margin-bottom:20px;
+}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.25;font-weight:800;letter-spacing:1px;
+  margin-bottom:18px;
+}
+h1 .hl{color:var(--accent)}
+.hero p.lead{color:var(--muted);font-size:16.5px;max-width:34em;margin-bottom:26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{
+  display:inline-block;padding:11px 24px;border-radius:7px;
+  font-size:15px;font-weight:600;letter-spacing:.5px;
+}
+.btn-primary{background:var(--accent);color:#062019}
+.btn-primary:hover{background:#5cf0d2;text-decoration:none}
+.btn-ghost{border:1px solid var(--line);color:var(--txt)}
+.btn-ghost:hover{border-color:var(--accent-dim);color:var(--accent);text-decoration:none}
+.hero-figure{
+  position:relative;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px;
+  box-shadow:0 24px 60px -30px rgba(0,0,0,.9);
+}
+.hero-figure svg{display:block;width:100%;height:auto}
+.fig-cap{
+  margin-top:14px;font-size:12.5px;color:var(--muted);
+  border-top:1px dashed var(--line);padding-top:12px;letter-spacing:.5px;
+}
+@media(max-width:860px){
+  .hero{padding:52px 0 46px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+}
+
+/* stats */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-bottom:1px solid var(--line);
+}
+.stat{
+  padding:26px 20px;border-right:1px solid var(--line);text-align:center;
+}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-size:26px;color:var(--accent);font-weight:800;letter-spacing:.5px}
+.stat span{font-size:13px;color:var(--muted)}
+@media(max-width:700px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
+}
+
+/* sections */
+section{padding:62px 0}
+.section-head{margin-bottom:34px;max-width:44em}
+.kicker{font-size:12.5px;letter-spacing:2.5px;color:var(--warm);margin-bottom:10px}
+h2{font-size:clamp(22px,2.6vw,29px);font-weight:800;letter-spacing:.5px;margin-bottom:12px}
+.section-head p{color:var(--muted);font-size:15.5px}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:24px 22px;transition:transform .2s ease,border-color .2s ease;
+}
+.card:hover{transform:translateY(-3px);border-color:var(--accent-dim)}
+.card .tag{font-size:12px;color:var(--accent);letter-spacing:1.5px;margin-bottom:10px;display:block}
+.card h3{font-size:17.5px;margin-bottom:10px;font-weight:700}
+.card p{font-size:14.5px;color:var(--muted)}
+@media(max-width:860px){.cards{grid-template-columns:1fr}}
+
+/* archive list */
+.archive{
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg-soft);
+}
+.arow{
+  display:grid;grid-template-columns:120px 1fr auto;gap:20px;align-items:center;
+  padding:18px 24px;border-bottom:1px solid var(--line);
+}
+.arow:last-child{border-bottom:none}
+.arow .no{font-size:13px;color:var(--accent);letter-spacing:1px;font-variant-numeric:tabular-nums}
+.arow h3{font-size:16px;font-weight:700;margin-bottom:4px}
+.arow p{font-size:14px;color:var(--muted)}
+.arow .state{font-size:12.5px;color:var(--warm);border:1px solid rgba(224,176,64,.35);border-radius:999px;padding:3px 12px;white-space:nowrap}
+@media(max-width:760px){
+  .arow{grid-template-columns:1fr;gap:8px;padding:18px}
+  .arow .state{justify-self:start}
+}
+
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.qa{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:22px}
+.qa h3{font-size:15.5px;color:var(--txt);margin-bottom:8px;font-weight:700}
+.qa h3::before{content:"Q ";color:var(--accent);font-weight:800}
+.qa p{font-size:14.5px;color:var(--muted)}
+@media(max-width:760px){.faq{grid-template-columns:1fr}}
+
+/* entry */
+.entry{
+  background:linear-gradient(135deg,#101826,#0c1521);
+  border:1px solid var(--line);border-radius:14px;
+  padding:40px 36px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
+}
+.entry h2{margin-bottom:10px}
+.entry p{color:var(--muted);font-size:15px;max-width:40em}
+.entry .actions{display:flex;flex-direction:column;gap:12px;min-width:200px}
+.disabled{
+  display:inline-block;text-align:center;padding:12px 24px;border-radius:7px;
+  background:rgba(64,224,192,.16);color:#9fe9da;font-weight:600;font-size:15px;
+  border:1px solid var(--accent-dim);
+  pointer-events:none;
+}
+.btn-solid{
+  display:inline-block;text-align:center;padding:12px 24px;border-radius:7px;
+  background:var(--accent);color:#062019;font-weight:700;font-size:15px;
+}
+.btn-solid:hover{background:#5cf0d2;text-decoration:none}
+@media(max-width:760px){
+  .entry{grid-template-columns:1fr;padding:30px 22px}
+  .entry .actions{flex-direction:row;flex-wrap:wrap}
+}
+
+/* footer */
+footer{
+  border-top:1px solid var(--line);padding:36px 0 44px;margin-top:20px;
+  font-size:13.5px;color:var(--muted);
+}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:flex-start}
+.foot .brand{font-size:15px;color:var(--txt)}
+.foot .brand:hover{color:var(--accent)}
+.foot p{max-width:38em;line-height:1.7}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a{color:var(--muted)}
+.foot-links a:hover{color:var(--accent)}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="秘密研究所 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0b1220"/>
+        <circle cx="32" cy="26" r="12" fill="none" stroke="#40e0c0" stroke-width="3"/>
+        <circle cx="32" cy="26" r="4.5" fill="#40e0c0"/>
+        <path d="M18 54l10-14h8l10 14" fill="none" stroke="#40e0c0" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      秘密研究所
+    </a>
+    <nav class="navlinks" aria-label="主导航">
+      <a href="#about">主题概览</a>
+      <a href="#sections">探秘栏目</a>
+      <a href="#archive">档案条目</a>
+      <a href="#faq">常见疑问</a>
+      <a href="#entry">网页入口</a>
+    </nav>
+    <a href="#entry" class="navcta">进入入口</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">MYSTERY · ARCHIVE · ENTRY</span>
+        <h1>秘密研究所</h1>
+        <p class="lead">
+          秘密研究所是围绕神秘实验室传闻形成的主题站点，这里汇集公开流传的档案条目、探秘线索与访问入口。
+          页面内容按传闻、条目、疑问三个层次展开，方便你快速找到自己想看的部分。
+        </p>
+        <div class="hero-actions">
+          <a href="#entry" class="btn btn-primary">前往网页入口</a>
+          <a href="#archive" class="btn btn-ghost">浏览档案条目</a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <svg viewBox="0 0 420 260" role="img" aria-label="秘密研究所主题插画：实验室建筑与雷达扫描">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1a2a3e"/>
+              <stop offset="1" stop-color="#0d1520"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="420" height="260" fill="url(#g1)"/>
+          <!-- grid -->
+          <g stroke="#1e3247" stroke-width="1">
+            <path d="M0 60H420M0 110H420M0 160H420M0 210H420"/>
+            <path d="M70 0V260M140 0V260M210 0V260M280 0V260M350 0V260"/>
+          </g>
+          <!-- radar -->
+          <circle cx="300" cy="82" r="52" fill="none" stroke="#2a4b5e" stroke-width="1.5"/>
+          <circle cx="300" cy="82" r="34" fill="none" stroke="#2a4b5e" stroke-width="1.5"/>
+          <circle cx="300" cy="82" r="16" fill="none" stroke="#2a4b5e" stroke-width="1.5"/>
+          <path d="M300 82L338 46" stroke="#40e0c0" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="322" cy="66" r="3.5" fill="#40e0c0"/>
+          <!-- building -->
+          <rect x="52" y="128" width="150" height="94" rx="4" fill="#12202f" stroke="#2c4a63" stroke-width="1.5"/>
+          <rect x="70" y="146" width="24" height="24" fill="#173247" stroke="#40e0c0" stroke-width="1.2"/>
+          <rect x="108" y="146" width="24" height="24" fill="#173247" stroke="#40e0c0" stroke-width="1.2"/>
+          <rect x="146" y="146" width="24" height="24" fill="#173247" stroke="#e0b040" stroke-width="1.2"/>
+          <rect x="70" y="186" width="100" height="10" rx="2" fill="#1c3348"/>
+          <rect x="110" y="112" width="34" height="16" rx="3" fill="#1c3348" stroke="#2c4a63" stroke-width="1.2"/>
+          <path d="M127 112V96" stroke="#2c4a63" stroke-width="2"/>
+          <circle cx="127" cy="92" r="4" fill="#e0b040"/>
+          <!-- ground -->
+          <path d="M0 222H420" stroke="#2c4a63" stroke-width="2"/>
+          <path d="M0 236H420" stroke="#1b2c3d" stroke-width="1"/>
+        </svg>
+        <figcaption class="fig-cap">示意图：秘密研究所主题视觉，雷达与实验楼为装饰元素，不代表真实地点。</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="wrap">
+    <div class="stats" aria-label="内容概览">
+      <div class="stat"><b>4</b><span>探秘栏目</span></div>
+      <div class="stat"><b>6</b><span>档案条目</span></div>
+      <div class="stat"><b>4</b><span>常见疑问</span></div>
+      <div class="stat"><b>1</b><span>网页入口</span></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">主题概览</div>
+        <h2>这个秘密研究所页面讲什么</h2>
+        <p>
+          秘密研究所并不是一个拥有官方说明的机构名称，而是在网络传播中反复出现的传闻主体。
+          围绕它流传的说法包括地下实验、编号档案、异常信号等，多数缺少可核实的来源。
+          本站把这些说法按类别陈列，并标注它们各自的流传状态，方便读者区分传闻与已知事实。
+        </p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">观察</span>
+          <h3>传闻从哪里来</h3>
+          <p>秘密研究所的讨论多起于论坛帖与短视频转述，早期文本往往没有署名，后续内容在转述中被不断补充细节，形成层层叠加的版本。</p>
+        </article>
+        <article class="card">
+          <span class="tag">方法</span>
+          <h3>怎样看这类内容</h3>
+          <p>阅读时先看是否有可追溯的原始出处，再看细节是否前后一致。对秘密研究所的条目，本页统一标注“待核”“流传中”等状态，避免把转述当作结论。</p>
+        </article>
+        <article class="card">
+          <span class="tag">边界</span>
+          <h3>本站不做什么</h3>
+          <p>本页不提供真实地址、人员名单或任何可执行的操作指引，也不对传闻真伪下定论。秘密研究所相关内容仅作为网络文化现象呈现。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTIONS -->
+  <section id="sections" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">探秘栏目</div>
+        <h2>秘密研究所的四个内容方向</h2>
+        <p>栏目按访问者最常提出的问题划分：它是什么、有哪些条目、线索如何判断、入口在哪里。每个栏目承担不同的信息任务，内容互不重复。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">01 / 定义</span>
+          <h3>名称与由来</h3>
+          <p>梳理“秘密研究所”这一称呼在中文网络中的出现语境，说明它更接近一个被反复使用的标签，而非某个固定机构的正式名称。</p>
+        </article>
+        <article class="card">
+          <span class="tag">02 / 条目</span>
+          <h3>编号档案</h3>
+          <p>把流传较广的几条说法整理成编号条目，每条附一句内容摘要与流传状态，读者可据此判断哪些说法已被多次转述、哪些仅出现过一次。</p>
+        </article>
+        <article class="card">
+          <span class="tag">03 / 线索</span>
+          <h3>线索辨别</h3>
+          <p>列出判断秘密研究所相关线索的几条朴素标准：时间是否可查、地点是否具体、是否有第二来源，帮助读者自行筛掉明显编造的内容。</p>
+        </article>
+        <article class="card">
+          <span class="tag">04 / 入口</span>
+          <h3>网页访问</h3>
+          <p>汇总与秘密研究所主题相关的网页访问方式说明，并提供本页的入口区块，方便从概览直接跳到操作位置。</p>
+        </article>
+        <article class="card">
+          <span class="tag">05 / 语境</span>
+          <h3>流行文化中的影子</h3>
+          <p>影视与游戏里常见的“秘密实验室”设定，与网络传闻互相借用元素，理解这层关系有助于看清哪些细节来自虚构作品。</p>
+        </article>
+        <article class="card">
+          <span class="tag">06 / 态度</span>
+          <h3>理性围观</h3>
+          <p>把秘密研究所当作谈资无妨，但不宜据此做出实际判断。页面所有条目保持原有不确定程度，不做夸大，也不做否定式断言。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+  <section id="archive">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">档案条目</div>
+        <h2>流传较广的几条说法</h2>
+        <p>以下条目按网络转述频次排序，状态标注反映的是流传情况，而非事实认定。每条只保留一句摘要，细节版本差异较大，请以原始出处为准。</p>
+      </div>
+      <div class="archive">
+        <div class="arow">
+          <span class="no">NO.001</span>
+          <div>
+            <h3>地下多层实验区</h3>
+            <p>传闻称秘密研究所主体位于地下，按层划分不同研究组，出入口隐蔽。</p>
+          </div>
+          <span class="state">流传中</span>
+        </div>
+        <div class="arow">
+          <span class="no">NO.002</span>
+          <div>
+            <h3>编号文件外泄</h3>
+            <p>有说法称一批带编号的文件曾被短暂公开，随后被删除，内容无人能完整复述。</p>
+          </div>
+          <span class="state">待核</span>
+        </div>
+        <div class="arow">
+          <span class="no">NO.003</span>
+          <div>
+            <h3>夜间异常信号</h3>
+            <p>转述提到附近无线电在特定时段出现规律杂音，被解释为实验设备运作的迹象。</p>
+          </div>
+          <span class="state">单一来源</span>
+        </div>
+        <div class="arow">
+          <span class="no">NO.004</span>
+          <div>
+            <h3>人员身份不明</h3>
+            <p>据说进出人员统一着装、不对外交流，但没有任何可确认的照片或记录。</p>
+          </div>
+          <span class="state">无实证</span>
+        </div>
+        <div class="arow">
+          <span class="no">NO.005</span>
+          <div>
+            <h3>地图上的空白区块</h3>
+            <p>有人把旧地图上的未标注区域与秘密研究所联系起来，但同类空白在各地地图中并不罕见。</p>
+          </div>
+          <span class="state">已澄清</span>
+        </div>
+        <div class="arow">
+          <span class="no">NO.006</span>
+          <div>
+            <h3>同名作品借用</h3>
+            <p>部分影视与游戏使用“秘密研究所”作为场景名，其设定与网络传闻并无直接关联。</p>
+          </div>
+          <span class="state">可查证</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">常见疑问</div>
+        <h2>读者最常问的四件事</h2>
+        <p>这些问题集中反映了访问秘密研究所相关内容时的实际需求，回答只陈述本站能确认的范围。</p>
+      </div>
+      <div class="faq">
+        <div class="qa">
+          <h3>秘密研究所是真实存在的地方吗？</h3>
+          <p>目前没有可公开核实的资料能确认它是一个具体机构。网络上流传的说法多数缺少原始出处，本站按传闻处理。</p>
+        </div>
+        <div class="qa">
+          <h3>页面里的档案条目可信吗？</h3>
+          <p>条目如实记录了流传内容与传播状态，并不等于确认其真实性。阅读时请把“流传中”“待核”“无实证”等标注一并看待。</p>
+        </div>
+        <div class="qa">
+          <h3>为什么有的条目写“已澄清”？</h3>
+          <p>个别说法在传播过程中已被指出解释错误，例如地图空白区块，这类条目会标注为已澄清并保留记录，避免旧说法反复出现。</p>
+        </div>
+        <div class="qa">
+          <h3>如何进入秘密研究所相关网页？</h3>
+          <p>本页底部的入口区块提供访问路径说明，点击“前往网页入口”即可定位到该区块，下载按钮将在资源就绪后开放。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTRY -->
+  <section id="entry">
+    <div class="wrap">
+      <div class="entry">
+        <div>
+          <div class="kicker">网页入口</div>
+          <h2>从这里开始浏览秘密研究所</h2>
+          <p>入口区块集中了页面的主要操作：跳回档案条目重新浏览，或直接使用上方的栏目导航。主题资料仍在补充中，下载资源尚未开放，按钮当前不可用，开放后将在此处更新。</p>
+        </div>
+        <div class="actions">
+          <a href="#archive" class="btn-solid">返回档案条目</a>
+          <a href="#" class="disabled" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a href="#top" class="brand" style="margin-bottom:12px;display:inline-flex">
+        <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0b1220"/>
+          <circle cx="32" cy="26" r="12" fill="none" stroke="#40e0c0" stroke-width="3"/>
+          <circle cx="32" cy="26" r="4.5" fill="#40e0c0"/>
+          <path d="M18 54l10-14h8l10 14" fill="none" stroke="#40e0c0" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        秘密研究所
+      </a>
+      <p>秘密研究所主题首页，内容整理自网络公开流传的说法，仅作网络文化现象记录，不构成对任何机构或地点的确认。页面条目状态随资料更新调整。</p>
+    </div>
+    <div class="foot-links">
+      <a href="#about">主题概览</a>
+      <a href="#sections">探秘栏目</a>
+      <a href="#archive">档案条目</a>
+      <a href="#faq">常见疑问</a>
+      <a href="#entry">网页入口</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
